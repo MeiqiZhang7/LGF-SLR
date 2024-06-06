@@ -24,3 +24,9 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 ## Requirements
   The code is written using Anaconda Python >= 3.6 and Pytorch 1.7 with OpenCV.
 ## Usage
+  To train, and test our models, please change the config path to corresponding config files.  
+  Basic usage:
+  ```
+python main.py --config /path/to/config/file
+```
+  
