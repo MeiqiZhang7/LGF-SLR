@@ -29,4 +29,20 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
   ```
 python main.py --config /path/to/config/file
 ```
-  
+  We take the WLASL dataset as an example to demonstrate its usage. 
+  ## Train
+  ### 全局特征流（上半身）
+  ```
+python main.py --config config/sign/WLASL/train/all/train_joint.yaml  
+python main.py --config config/sign/WLASL/train/all/train_bone.yaml
+python main.py --config config/sign/WLASL/train/all/train_joint_motion.yaml
+python main.py --config config/sign/WLASL/train/all/train_bone_motion.yaml
+```
+  ###  局部特征流（右手）
+  ```
+python main.py --config config/sign/WLASL/train/right/train_joint_right.yaml  
+python main.py --config config/sign/WLASL/train/right/train_bone_right.yaml
+python main.py --config config/sign/WLASL/train/right/train_joint_motion_right.yaml
+python main.py --config config/sign/WLASL/train/right/train_bone_motion_right.yaml
+  ```
+ 左手的方法与右手相同，只需将文件夹和文件名由right改为left即可。
