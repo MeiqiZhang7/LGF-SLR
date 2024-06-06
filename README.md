@@ -29,8 +29,8 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
   ```
 python main.py --config /path/to/config/file
 ```
-  We take the WLASL dataset as an example to demonstrate its usage. 
   ### Train:
+  We take the WLASL dataset as an example to demonstrate its usage. 
   #### Global feature flow(Upper body)
   ```
 python main.py --config config/sign/WLASL/train/all/train_joint.yaml  
