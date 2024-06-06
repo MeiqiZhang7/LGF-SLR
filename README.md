@@ -4,7 +4,6 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 ## Table of Contents
 * Data Preparation
 * Requirements
-* Pretrained Models
 * Usage
 ## Data Preparation
 * Download [AUTSL](https://chalearnlap.cvc.uab.es/dataset/40/description/), [CSL/SLR500](https://link.zhihu.com/?target=http%3A//home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html), and [WLASL2000](https://dxli94.github.io/WLASL/) dataset following their instructions.
@@ -17,6 +16,11 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 ```
     cd data_gen  
     python sign_gendata.py  
-python gen_bone_data.py <br>
-python gen_motion.py
+    python gen_bone_data.py <br>
+    python gen_motion.py
 ```
+* Use save_npy.py to extract the left-hand and right-hand npy files. Note that the data path should be modified.
+* Preprocessed skeleton data for the global feature streams of the AUTSL, SLR500, and WLASL2000 datasets are provided [here](https://drive.google.com/drive/folders/1VUQsh_nf70slT4YsC-UzTCAZ3jB_uFKX?usp=sharing). Please be sure to follow their rules and protocols when using preprocessed data.
+## Requirements
+  The code is written using Anaconda Python >= 3.6 and Pytorch 1.7 with OpenCV.
+## Usage
