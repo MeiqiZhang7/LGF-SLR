@@ -5,6 +5,9 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 * Data Preparation
 * Requirements
 * Usage
+ * Train
+ * Test
+ * Multi-stream 
 ## Data Preparation
 * Download [AUTSL](https://chalearnlap.cvc.uab.es/dataset/40/description/), [CSL/SLR500](https://link.zhihu.com/?target=http%3A//home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html), and [WLASL2000](https://dxli94.github.io/WLASL/) dataset following their instructions.
 * Generate whole-body skeleton keypoints and save as npy
