@@ -15,8 +15,8 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
   * Copy generated npy files to corresponding data folders.
 * Run the following code to prepare the data for bone, joint motion and bone motion.<br>
 ```
-cd data_gen  
-python sign_gendata.py  
+    cd data_gen  
+    python sign_gendata.py  
 python gen_bone_data.py <br>
 python gen_motion.py
 ```
