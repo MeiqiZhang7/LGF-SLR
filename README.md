@@ -36,9 +36,12 @@ python main.py --config /path/to/config/file
   We take the WLASL dataset as an example to demonstrate its usage. 
   #### Global feature flow(Upper body)
   ```
-python main.py --config config/sign/WLASL/train/all/train_joint.yaml  
+python main.py --config config/sign/WLASL/train/all/train_joint.yaml
+  
 python main.py --config config/sign/WLASL/train/all/train_bone.yaml
+  
 python main.py --config config/sign/WLASL/train/all/train_joint_motion.yaml
+  
 python main.py --config config/sign/WLASL/train/all/train_bone_motion.yaml
 ```
   ####  Local feature flow（Right hand）
