@@ -14,7 +14,7 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
   * Download pretrained whole-body pose model: [Google Drive](https://drive.google.com/file/d/1f_c3uKTDQ4DR3CrwMSI8qdsTKJvKVt7p/view?usp=sharing)
   * Copy generated npy files to corresponding data folders.
 * Run the following code to prepare the data for bone, joint motion and bone motion.
-     cd data_gen/
-     python sign_gendata.py
-     python gen_bone_data.py
-     python gen_motion.py
+     `cd data_gen/  
+     python sign_gendata.py  
+     python gen_bone_data.py  
+     python gen_motion.py`
