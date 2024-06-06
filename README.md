@@ -31,28 +31,28 @@ python main.py --config /path/to/config/file
 ```
   We take the WLASL dataset as an example to demonstrate its usage. 
   ### Train:
-  #### 全局特征流（上半身）
+  #### Global feature flow(Upper body)
   ```
 python main.py --config config/sign/WLASL/train/all/train_joint.yaml  
 python main.py --config config/sign/WLASL/train/all/train_bone.yaml
 python main.py --config config/sign/WLASL/train/all/train_joint_motion.yaml
 python main.py --config config/sign/WLASL/train/all/train_bone_motion.yaml
 ```
-  ####  局部特征流（右手）
+  ####  Local feature flow（Right hand）
   ```
 python main.py --config config/sign/WLASL/train/right/train_joint_right.yaml  
 python main.py --config config/sign/WLASL/train/right/train_bone_right.yaml
 python main.py --config config/sign/WLASL/train/right/train_joint_motion_right.yaml
 python main.py --config config/sign/WLASL/train/right/train_bone_motion_right.yaml
   ```
- 左手的方法与右手相同，只需将文件夹和文件名由right改为left即可。
+The method for the left hand is the same as for the right hand; just change the folder and file name from "right" to "left".
   ### Test:
-   测试的方法与训练相同，只需将文件夹和文件名由train改为test即可。  
+   The testing method is the same as the training method; just change the folder and file name from "train" to "test".  
   ### Multi-stream ensemble:
-  对于局部特征和全局特征轨道，所有模态的测试结果都需要集成在一起才能生成最终结果。首先先将单流的四种运动形式的预测结果进行融合，得到单流的预测结果，然后再将三个单流的结果进行融合得到最终结果。以全局特征流（all）为例，局部特征流（左手和右手）操作流程同理。
-   * 将workdir中的结果.pkl 文件从所有流（关节、骨、关节运动和骨运动）复制到 . /ensemble/gcn /test-best并正确重命名它们。
-   * 修改calculated weight.py中的数据路径和标签路径，然后运行python calculated weight.py，得到四种运动结果的权重， 复制到ensemble.py中。
-   * 修改ensemble.py文件中的数据路径和标签路径，运行python ensemble.py得到全局特征流的结果，同时在gcn_ensembled文件夹中得到全局特征流的结果pkl文件。
-   * 修改2.py中的数据路径和标签路径，运行python 2.py生成全局特征流和局部特征流的权重，复制到ensemble_all.py中。
-   * 修改ensemble_all.py文件中的数据路径和标签路径，运行python ensemble_all.py得到最终的预测结果。
+  * For both local feature and global feature tracks, the testing results of all modalities need to be integrated together to generate the final result. First, the predicted results of the four motion modes of a single track are fused to obtain the prediction result of the single track, and then the results of the three single tracks are fused to get the final result. Taking the global feature track (all) as an example, the operation process for local feature tracks (left hand and right hand) is the same.
+   * Copy the results.pkl file from the workdir to./ensemble/gcn/test-best for all streams (joints, bones, joint motion, and bone motion), and rename them correctly.
+   * Modify the data path and label path in `calculated_weight.py`, then run `python calculated_weight.py` to obtain the weights for the four types of motion results, and copy them to `ensemble.py`.
+   * Modify the data path and label path in the `ensemble.py` file, then run `python ensemble.py` to obtain the results for the global feature track. Additionally, you will get the result.pkl file for the global feature track in the gcn_ensembled folder.
+   * Modify the data path and label path in `calculated_weight2.py`, run `python calculated_weight2.py` to generate the weights for global feature track and local feature track, then copy them to `ensemble_all.py`.
+   * Modify the data path and label path in `ensemble_all.py`, then run `python ensemble_all.py` to obtain the final prediction results.
    
