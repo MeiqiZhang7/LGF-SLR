@@ -53,7 +53,7 @@ python main.py --config config/sign/WLASL/train/all/train_joint_motion.yaml
   
 python main.py --config config/sign/WLASL/train/all/train_bone_motion.yaml
 ```
-  ####  Local feature flow（Right hand）
+  ####  Local feature flow(Right hand)
   ```
 python main.py --config config/sign/WLASL/train/right/train_joint_right.yaml
   
