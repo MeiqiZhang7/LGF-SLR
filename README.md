@@ -49,5 +49,10 @@ python main.py --config config/sign/WLASL/train/right/train_bone_motion_right.ya
   ### Test:
    测试的方法与训练相同，只需将文件夹和文件名由train改为test即可。  
   ### Multi-stream ensemble:
-   对于局部特征和全局特征轨道，所有模态的测试结果都需要集成在一起才能生成最终结果。以全局特征流（all）为例，局部特征流（左手和右手）操作流程同理。  
+  对于局部特征和全局特征轨道，所有模态的测试结果都需要集成在一起才能生成最终结果。首先先将单流的四种运动形式的预测结果进行融合，得到单流的预测结果，然后再将三个单流的结果进行融合得到最终结果。以全局特征流（all）为例，局部特征流（左手和右手）操作流程同理。
+   * 将workdir中的结果.pkl 文件从所有流（关节、骨、关节运动和骨运动）复制到 . /ensemble/gcn /test-best并正确重命名它们。
+   * 修改calculated weight.py中的数据路径和标签路径，然后运行python calculated weight.py，得到四种运动结果的权重， 复制到ensemble.py中。
+   * 修改ensemble.py文件中的数据路径和标签路径，运行python ensemble.py得到全局特征流的结果，同时在gcn_ensembled文件夹中得到全局特征流的结果pkl文件。
+   * 修改2.py中的数据路径和标签路径，运行python 2.py生成全局特征流和局部特征流的权重，复制到ensemble_all.py中。
+   * 修改ensemble_all.py文件中的数据路径和标签路径，运行python ensemble_all.py得到最终的预测结果。
    
