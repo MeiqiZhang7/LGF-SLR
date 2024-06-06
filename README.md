@@ -7,4 +7,14 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 * Pretrained Models
 * Usage
 ## Data Preparation
-Download [AUTSL](https://chalearnlap.cvc.uab.es/dataset/40/description/), [CSL/SLR500](https://link.zhihu.com/?target=http%3A//home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html), and [WLASL2000](https://dxli94.github.io/WLASL/) dataset following their instructions.
+* Download [AUTSL](https://chalearnlap.cvc.uab.es/dataset/40/description/), [CSL/SLR500](https://link.zhihu.com/?target=http%3A//home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html), and [WLASL2000](https://dxli94.github.io/WLASL/) dataset following their instructions.
+* Generate whole-body skeleton keypoints and save as npy
+  * Use pretrained model of whole-body pose estimation to extract 133 landmarks from rgb videos and save as npy files.
+  * Go to wholepose folder, change input_path and output_npy variables as the path of input videos and output npy files.
+  * Download pretrained whole-body pose model: [Google Drive](https://drive.google.com/file/d/1f_c3uKTDQ4DR3CrwMSI8qdsTKJvKVt7p/view?usp=sharing)
+  * Copy generated npy files to corresponding data folders.
+* Run the following code to prepare the data for bone, joint motion and bone motion.
+     cd data_gen/
+     python sign_gendata.py
+     python gen_bone_data.py
+     python gen_motion.py
