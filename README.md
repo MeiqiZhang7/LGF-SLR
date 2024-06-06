@@ -43,9 +43,12 @@ python main.py --config config/sign/WLASL/train/all/train_bone_motion.yaml
 ```
   ####  Local feature flow（Right hand）
   ```
-python main.py --config config/sign/WLASL/train/right/train_joint_right.yaml  
+python main.py --config config/sign/WLASL/train/right/train_joint_right.yaml
+  
 python main.py --config config/sign/WLASL/train/right/train_bone_right.yaml
+  
 python main.py --config config/sign/WLASL/train/right/train_joint_motion_right.yaml
+  
 python main.py --config config/sign/WLASL/train/right/train_bone_motion_right.yaml
   ```
 The method for the left hand is the same as for the right hand; just change the folder and file name from "right" to "left".
