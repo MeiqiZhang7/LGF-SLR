@@ -42,7 +42,7 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
   ```
 python main.py --config /path/to/config/file
 ```
-  ### Train:
+  ## Train:
   We take the WLASL dataset as an example to demonstrate its usage. 
   #### Global feature flow(Upper body)
   ```
@@ -65,9 +65,9 @@ python main.py --config config/sign/WLASL/train/right/train_joint_motion_right.y
 python main.py --config config/sign/WLASL/train/right/train_bone_motion_right.yaml
   ```
 The method for the left hand is the same as for the right hand; just change the folder and file name from "right" to "left".
-  ### Test:
+  ## Test:
    The testing method is the same as the training method; just change the folder and file name from "train" to "test".  
-  ### Multi-stream ensemble:
+  ## Multi-stream ensemble:
    For both local feature and global feature tracks, the testing results of all modalities need to be integrated together to generate the final result. First, the predicted results of the four motion modes of a single track are fused to obtain the prediction result of the single track, and then the results of the three single tracks are fused to get the final result. Taking the global feature track (all) as an example, the operation process for local feature tracks (left hand and right hand) is the same.
    * Copy the results.pkl file from the workdir to./ensemble/gcn/test-best for all streams (joints, bones, joint motion, and bone motion), and rename them correctly.
       
