@@ -5,9 +5,9 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 * Data Preparation
 * Requirements
 * Usage
- * Train
- * Test
- * Multi-stream 
+  * Train
+  * Test
+  * Multi-stream 
 ## Data Preparation
 * Download [AUTSL](https://chalearnlap.cvc.uab.es/dataset/40/description/), [CSL/SLR500](https://link.zhihu.com/?target=http%3A//home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html), and [WLASL2000](https://dxli94.github.io/WLASL/) dataset following their instructions.
 * Generate whole-body skeleton keypoints and save as npy
@@ -52,7 +52,7 @@ The method for the left hand is the same as for the right hand; just change the 
   ### Test:
    The testing method is the same as the training method; just change the folder and file name from "train" to "test".  
   ### Multi-stream ensemble:
-  * For both local feature and global feature tracks, the testing results of all modalities need to be integrated together to generate the final result. First, the predicted results of the four motion modes of a single track are fused to obtain the prediction result of the single track, and then the results of the three single tracks are fused to get the final result. Taking the global feature track (all) as an example, the operation process for local feature tracks (left hand and right hand) is the same.
+   For both local feature and global feature tracks, the testing results of all modalities need to be integrated together to generate the final result. First, the predicted results of the four motion modes of a single track are fused to obtain the prediction result of the single track, and then the results of the three single tracks are fused to get the final result. Taking the global feature track (all) as an example, the operation process for local feature tracks (left hand and right hand) is the same.
    * Copy the results.pkl file from the workdir to./ensemble/gcn/test-best for all streams (joints, bones, joint motion, and bone motion), and rename them correctly.
    * Modify the data path and label path in `calculated_weight.py`, then run `python calculated_weight.py` to obtain the weights for the four types of motion results, and copy them to `ensemble.py`.
    * Modify the data path and label path in the `ensemble.py` file, then run `python ensemble.py` to obtain the results for the global feature track. Additionally, you will get the result.pkl file for the global feature track in the gcn_ensembled folder.
