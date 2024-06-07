@@ -16,7 +16,7 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 * Generate whole-body skeleton keypoints and save as npy  
     
   * Use pretrained model of whole-body pose estimation to extract 133 landmarks from rgb videos and save as npy files.
-  * Go to wholepose folder, change input_path and output_npy variables as the path of input videos and output npy files.
+  * Go to `wholepose` folder, change input_path and output_npy variables as the path of input videos and output npy files.
   * Download pretrained whole-body pose model: [Google Drive](https://drive.google.com/file/d/1f_c3uKTDQ4DR3CrwMSI8qdsTKJvKVt7p/view?usp=sharing)
   * Copy generated npy files to corresponding data folders.
       
@@ -30,7 +30,7 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
   
     python gen_motion.py
 ```
-* Use save_npy.py to extract the left-hand and right-hand npy files. Note that the data path should be modified.
+* Use `save_npy.py` to extract the left-hand and right-hand npy files. Note that the data path should be modified.
     
 * Preprocessed skeleton data for the global feature streams of the AUTSL, SLR500, and WLASL2000 datasets are provided [here](https://drive.google.com/drive/folders/1VUQsh_nf70slT4YsC-UzTCAZ3jB_uFKX?usp=sharing). Please be sure to follow their rules and protocols when using preprocessed data.
 ## Requirements
