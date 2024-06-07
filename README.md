@@ -6,10 +6,10 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
     
 * [Requirements](https://github.com/MeiqiZhang7/LGF-SLR#requirements)  
     
-* Usage
-  * Train
-  * Test
-  * Multi-stream 
+* [Usage](https://github.com/MeiqiZhang7/LGF-SLR/blob/main/README.md#usage)
+  * [Train](https://github.com/MeiqiZhang7/LGF-SLR/edit/main/README.md#train)
+  * [Test](https://github.com/MeiqiZhang7/LGF-SLR/edit/main/README.md#test)
+  * [Multi-stream](https://github.com/MeiqiZhang7/LGF-SLR/edit/main/README.md#multi-stream-ensemble) 
 ## Data Preparation
 * Download [AUTSL](https://chalearnlap.cvc.uab.es/dataset/40/description/), [CSL/SLR500](https://link.zhihu.com/?target=http%3A//home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html), and [WLASL2000](https://dxli94.github.io/WLASL/) dataset following their instructions.
     
@@ -66,7 +66,27 @@ python main.py --config config/sign/WLASL/train/right/train_bone_motion_right.ya
   ```
 The method for the left hand is the same as for the right hand; just change the folder and file name from "right" to "left".
   ## Test:
-   The testing method is the same as the training method; just change the folder and file name from "train" to "test".  
+#### Global feature flow(Upper body)
+  ```
+python main.py --config config/sign/WLASL/test/all/test_joint.yaml
+  
+python main.py --config config/sign/WLASL/test/all/test_bone.yaml
+  
+python main.py --config config/sign/WLASL/test/all/test_joint_motion.yaml
+  
+python main.py --config config/sign/WLASL/test/all/test_bone_motion.yaml
+```
+  ####  Local feature flow(Right hand)
+  ```
+python main.py --config config/sign/WLASL/test/right/test_joint_right.yaml
+  
+python main.py --config config/sign/WLASL/test/right/test_bone_right.yaml
+  
+python main.py --config config/sign/WLASL/test/right/test_joint_motion_right.yaml
+  
+python main.py --config config/sign/WLASL/test/right/test_bone_motion_right.yaml
+  ```
+The method for the left hand is the same as for the right hand; just change the folder and file name from "right" to "left". 
   ## Multi-stream ensemble:
    For both local feature and global feature tracks, the testing results of all modalities need to be integrated together to generate the final result. First, the predicted results of the four motion modes of a single track are fused to obtain the prediction result of the single track, and then the results of the three single tracks are fused to get the final result. Taking the global feature track (all) as an example, the operation process for local feature tracks (left hand and right hand) is the same.
    * Copy the results.pkl file from the workdir to./ensemble/gcn/test-best for all streams (joints, bones, joint motion, and bone motion), and rename them correctly.
