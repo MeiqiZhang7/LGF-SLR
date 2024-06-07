@@ -89,11 +89,11 @@ python main.py --config config/sign/WLASL/test/right/test_bone_motion_right.yaml
 The method for the left hand is the same as for the right hand; just change the folder and file name from "right" to "left". 
   ## Multi-stream ensemble:
    For both local feature and global feature tracks, the testing results of all modalities need to be integrated together to generate the final result. First, the predicted results of the four motion modes of a single track are fused to obtain the prediction result of the single track, and then the results of the three single tracks are fused to get the final result. Taking the global feature track (all) as an example, the operation process for local feature tracks (left hand and right hand) is the same.
-   * Copy the results.pkl file from the workdir to./ensemble/gcn/test-best for all streams (joints, bones, joint motion, and bone motion), and rename them correctly.
+   * Copy the results.pkl file from the `work_dir` to`./ensemble/gcn/test-best` for all streams (joints, bones, joint motion, and bone motion), and rename them correctly.
       
    * Modify the data path and label path in `calculated_weight.py`, then run `python calculated_weight.py` to obtain the weights for the four types of motion results, and copy them to `ensemble.py`.
        
-   * Modify the data path and label path in the `ensemble.py` file, then run `python ensemble.py` to obtain the results for the global feature track. Additionally, you will get the result.pkl file for the global feature track in the gcn_ensembled folder.
+   * Modify the data path and label path in the `ensemble.py` file, then run `python ensemble.py` to obtain the results for the global feature track. Additionally, you will get the result.pkl file for the global feature track in the `gcn_ensembled` folder.
        
    * Modify the data path and label path in `calculated_weight2.py`, run `python calculated_weight2.py` to generate the weights for global feature track and local feature track, then copy them to `ensemble_all.py`.
        
