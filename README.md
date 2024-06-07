@@ -98,4 +98,10 @@ The method for the left hand is the same as for the right hand; just change the 
    * Modify the data path and label path in `calculated_weight2.py`, run `python calculated_weight2.py` to generate the weights for global feature track and local feature track, then copy them to `ensemble_all.py`.
        
    * Modify the data path and label path in `ensemble_all.py`, then run `python ensemble_all.py` to obtain the final prediction results.
-   
+  
+## Reference
+[Skeleton Aware Multi-modal Sign Language Recognition](https://openaccess.thecvf.com/content/CVPR2021W/ChaLearn/papers/Jiang_Skeleton_Aware_Multi-Modal_Sign_Language_Recognition_CVPRW_2021_paper.pdf)  
+[Code](https://github.com/jackyjsy/CVPR21Chal-SLR)  
+  
+[Sign Language Recognition via Skeleton-Aware Multi-Model Ensemble](https://arxiv.org/pdf/2110.06161.pdf)
+[Code](https://github.com/jackyjsy/SAM-SLR-v2)
