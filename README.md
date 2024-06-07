@@ -4,7 +4,7 @@ For those who are deaf, sign language recognition (SLR) technology can offer a m
 ## Table of Contents
 * [Data Preparation](https://github.com/MeiqiZhang7/LGF-SLR#data-preparation)
     
-* Requirements  
+* [Requirements](https://github.com/MeiqiZhang7/LGF-SLR#requirements)  
     
 * Usage
   * Train
