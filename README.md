@@ -100,8 +100,10 @@ The method for the left hand is the same as for the right hand; just change the 
    * Modify the data path and label path in `ensemble_all.py`, then run `python ensemble_all.py` to obtain the final prediction results.
   
 ## Reference
-[Skeleton Aware Multi-modal Sign Language Recognition](https://openaccess.thecvf.com/content/CVPR2021W/ChaLearn/papers/Jiang_Skeleton_Aware_Multi-Modal_Sign_Language_Recognition_CVPRW_2021_paper.pdf)  
-[Code](https://github.com/jackyjsy/CVPR21Chal-SLR)  
+[1] [Skeleton Aware Multi-modal Sign Language Recognition](https://openaccess.thecvf.com/content/CVPR2021W/ChaLearn/papers/Jiang_Skeleton_Aware_Multi-Modal_Sign_Language_Recognition_CVPRW_2021_paper.pdf)   
   
-[Sign Language Recognition via Skeleton-Aware Multi-Model Ensemble](https://arxiv.org/pdf/2110.06161.pdf)
-[Code](https://github.com/jackyjsy/SAM-SLR-v2)
+ Code : [https://github.com/jackyjsy/CVPR21Chal-SLR](https://github.com/jackyjsy/CVPR21Chal-SLR)  
+  
+[2] [Sign Language Recognition via Skeleton-Aware Multi-Model Ensemble](https://arxiv.org/pdf/2110.06161.pdf)  
+  
+ Code : [https://github.com/jackyjsy/CVPR21Chal-SLR](https://github.com/jackyjsy/SAM-SLR-v2)
